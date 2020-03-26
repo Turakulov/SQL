@@ -10,17 +10,17 @@ _________________________________________________________________________
 
 CREATE OR REPLACE PACKAGE takenValues IS
 TYPE rowGetValues IS record(
-  row_u_id		    users.u_id%TYPE,
-  row_u_f		      users.u_f%TYPE, 
-  row_u_io		    users.u_io%TYPE, 
+  row_u_id        users.u_id%TYPE,
+  row_u_f         users.u_f%TYPE, 
+  row_u_io        users.u_io%TYPE, 
   row_u_email     users.u_email%TYPE,
-  row_mv_id		    mvalues.mv_id%TYPE,
-  row_mv_type	    mvalues.mv_type%TYPE,
-  row_mv_desc		  mvalues.mv_desc%TYPE, 
-  row_mv_closet	  mvalues.mv_closet%TYPE,
-  row_mv_cell		  mvalues.mv_cell%TYPE,
-  row_tv_take		  tvalues.tv_take%TYPE, 
-  row_tv_ret		  tvalues.tv_ret%TYPE
+  row_mv_id       mvalues.mv_id%TYPE,
+  row_mv_type     mvalues.mv_type%TYPE,
+  row_mv_desc     mvalues.mv_desc%TYPE, 
+  row_mv_closet   mvalues.mv_closet%TYPE,
+  row_mv_cell     mvalues.mv_cell%TYPE,
+  row_tv_take     tvalues.tv_take%TYPE, 
+  row_tv_ret      tvalues.tv_ret%TYPE
 );
 
 TYPE tblGetValues IS TABLE OF rowGetValues;
