@@ -40,7 +40,7 @@ END takenValues;
 */
 
 CREATE OR REPLACE PACKAGE BODY takenValues IS
-FUNCTION getValues(email_in varchar default NULL)
+FUNCTION getValues(email_in VARCHAR DEFAULT NULL)
 RETURN tblGetValues
 pipelined
 
@@ -60,12 +60,12 @@ BEGIN
         u.u_id = tv.tv_user AND mv.mv_id = tv.tv_value AND u.u_email = email_in
       ORDER BY
         tv.tv_take DESC
-    ) loop
+    ) LOOP
         pipe row(curr);
-      end loop;
-  end if;
-end getValues;
+      END LOOP;
+  END IF;
+END getValues;
 
-end takenValues;
+END takenValues;
 
 -- Вызов пакета select * from TABLE(takenValues.getValues(‘pakhmetiev@hse.ru’));
