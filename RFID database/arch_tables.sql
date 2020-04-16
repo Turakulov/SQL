@@ -12,7 +12,7 @@ CREATE TABLE a_closets
 	acl_id     VARCHAR(10),
 	acl_cells  NUMBER(2)            NOT NULL,
 	acl_bld    NUMBER(2)            NOT NULL,
-  acl_floor  NUMBER(2)            NOT NULL,
+  	acl_floor  NUMBER(2)            NOT NULL,
 	acl_desc   VARCHAR(500)         NOT NULL,
   
 	CONSTRAINT pk_closets           PRIMARY KEY(acl_id)
@@ -45,8 +45,8 @@ ____________________________________
 CREATE TABLE a_buildings
 (
 	ab_id       NUMBER(2),
-  ab_section  VARCHAR(40)  NOT NULL,
-  ab_name     VARCHAR(80)  NOT NULL,
+  	ab_section  VARCHAR(40)  NOT NULL,
+  	ab_name     VARCHAR(80)  NOT NULL,
   
   CONSTRAINT  pk_buildings PRIMARY KEY(ab_id)
 );
@@ -56,9 +56,9 @@ ____________________________________
 CREATE TABLE a_mvalues
 (
 	amv_id       VARCHAR(14),
-	amv_type	   VARCHAR(60)      NOT NULL,
+	amv_type     VARCHAR(60)      NOT NULL,
 	amv_closet   VARCHAR(10)      NOT NULL,
-  amv_cell     NUMBER(2)        NOT NULL,
+  	amv_cell     NUMBER(2)        NOT NULL,
 	amv_desc     VARCHAR(500)     NOT NULL,
   
 	CONSTRAINT   pk_mvalues       PRIMARY KEY (amv_id),
@@ -70,14 +70,14 @@ ___________________________________
 
 CREATE TABLE a_users
 (
-	au_id		   VARCHAR(14),
-	au_f 		   VARCHAR(60)   NOT NULL,
+	au_id	   VARCHAR(14),
+	au_f 	   VARCHAR(60)   NOT NULL,
 	au_io      VARCHAR(60)   NOT NULL,
-	au_email	 VARCHAR(60)   NOT NULL,
+	au_email   VARCHAR(60)   NOT NULL,
 	au_code	   VARCHAR(20)   NOT NULL,
   
 	CONSTRAINT pk_users      PRIMARY KEY (au_id)
-  CONSTRAINT fk_users_deps FOREIGN KEY (au_code) REFERENCES departments(ad_code)
+  	CONSTRAINT fk_users_deps FOREIGN KEY (au_code) REFERENCES departments(ad_code)
 );
 
 ___________________________________
